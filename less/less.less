@@ -1,0 +1,141 @@
+
+
+@import "var.less";
+*{
+  box-sizing: border-box;
+}
+/*小屏的时候*/
+.container{
+  &{
+     width:100%;
+     margin: auto;
+  }
+  &>.row{
+    width:100%;
+    .clear;
+  }
+  &-fluid{
+    width:100%;margin:auto;
+  }
+  &-fluid>.row{
+    width:100%;
+    .clear;
+  }
+
+}
+/*最小屏*/
+
+.loop();
+.promo .con:nth-child(1) a{
+  background: url("../img/pro1_small.jpg") no-repeat center;
+
+}
+.promo .con:nth-child(2) a{
+  background: url("../img/pro2_small.jpg") no-repeat center;
+
+}
+
+.promo .con:nth-child(3) a{
+  background: url("../img/pro3_small.jpg") no-repeat center;
+
+}
+.promo .con:nth-child(4) a{
+  background: url("../img/pro4_small.jpg") no-repeat center;
+}
+.col-s-hide{
+  display: none;
+}
+
+/*中屏*/
+
+@media screen and (min-width: @num1){
+  .promo .con:nth-child(1) a{
+    background: url("../img/pro1_medium.jpg") no-repeat center;
+
+  }
+  .promo .con:nth-child(2) a{
+    background: url("../img/pro2_medium.jpg") no-repeat center;
+
+  }
+
+  .promo .con:nth-child(3) a{
+    background: url("../img/pro3_medium.jpg") no-repeat center;
+
+  }
+  .promo .con:nth-child(4) a{
+    background: url("../img/pro4_medium.jpg") no-repeat center;
+  }
+  .container{
+      width:100%;
+      margin: auto;
+    }
+ .loop(m);
+  .col-s-hide{
+    display: block;
+  }
+  .col-l-hide{
+    display: block;
+  }
+  .col-m-hide{
+    display: none;
+  }
+}
+
+/*大屏*/
+@media screen and (min-width: @num2){
+
+  .promo .con:nth-child(1) a{
+    background: url("../img/pro1_large.jpg") no-repeat center;
+
+  }
+  .promo .con:nth-child(2) a{
+    background: url("../img/pro2_large.jpg") no-repeat center;
+
+  }
+
+  .promo .con:nth-child(3) a{
+    background: url("../img/pro3_large.jpg") no-repeat center;
+
+  }
+  .promo .con:nth-child(4) a{
+    background: url("../img/pro4_large.jpg") no-repeat center;
+  }
+  .container{
+    width:100%;
+    margin: auto;
+  }
+  .loop(l);
+  .col-s-hide{
+    display: block;
+  }
+  .col-m-hide{
+    display: block;
+  }
+  .col-l-hide{
+    display: none;
+  }
+}
+//栅格化的核心代码
+.loop(@type:s,@i:1) when (@i<=@cols){
+  .container>.row>.col-@{type}-@{i}{
+    float:left;
+    width:@i/@cols*100%;
+  }
+  .container-fluid>.row>.col-@{type}-@{i}{
+    float:left;
+    width:@i/@cols*100%;
+  }
+  .loop(@type,@i+1);
+}
+
+
+/*清除浮动*/
+.clear(){
+  &:before,&:after{
+    content: "";
+    display: block;
+  }
+  &:after{
+    clear:both;
+  }
+}

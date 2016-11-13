@@ -1,0 +1,77 @@
+
+header .list{
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 44px;
+    right:0;
+    bottom:0;
+    padding: 0 48px;
+    overflow: auto;
+    box-sizing: border-box;
+    background: rgb(0,0,0);
+    z-index: 2;
+}
+header .list a{
+    width:100%;
+    height:47px;
+    border-bottom:1px solid #333333;
+    opacity: 0;
+    transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+    transform: scale(1.1) translateY(-24px);
+}
+header .list .list-an{
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+header .list a:nth-child(1){
+    margin-top:12px;
+}
+header .list p{
+    width:100%;
+    height:47px;
+    opacity: 0;
+    border-bottom:1px solid silver;
+    margin-bottom:48px;
+    padding-left:30px;
+    transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+    transform: scale(1.1) translateY(-24px);
+}
+header .list p span{
+    font-size:18px;
+    color: #ffffff;
+    line-height:47px;
+    text-align: center;
+}
+header nav ul:nth-child(1) .list a:nth-child(1){
+    transition-delay: 300ms,300ms;
+    background: url("../img/image_small1.svg") no-repeat left center;
+}
+header nav ul:nth-child(1) .list a:nth-child(2){
+    transition-delay: 350ms,350ms;
+    background: url("../img/image_small2.svg") no-repeat left center;
+
+}
+header nav ul:nth-child(1) .list a:nth-child(3){
+    transition-delay: 400ms,400ms;
+    background: url("../img/image_small3.svg") no-repeat left center;
+
+}
+header nav ul:nth-child(1) .list a:nth-child(4){
+    transition-delay: 450ms,450ms;
+    background: url("../img/image_small4.svg") no-repeat left center;
+
+}
+header nav ul:nth-child(1) .list a:nth-child(5){
+    transition-delay: 500ms,500ms;
+    background: url("../img/image_small5.svg") no-repeat left center;
+
+}
+header nav ul:nth-child(1) .list a:nth-child(6){
+    transition-delay: 550ms,550ms;
+    background: url("../img/image_small6.svg") no-repeat left center;
+}
+header nav ul:nth-child(1) .list p{
+    transition-delay: 600ms,600ms;
+    background: url("../img/image_small_search.svg") no-repeat;
+}
